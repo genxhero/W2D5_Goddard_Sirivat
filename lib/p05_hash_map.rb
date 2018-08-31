@@ -1,6 +1,8 @@
 require_relative 'p04_linked_list'
 
 class HashMap
+  
+  include Enumerable
   attr_reader :count
 
   def initialize(num_buckets = 8)
@@ -9,15 +11,27 @@ class HashMap
   end
 
   def include?(key)
+    @store[key.hash % num_buckets].include?(key)
   end
 
   def set(key, val)
+    if @store.include?(key)
+      @store[key.hash % num_buckets].update(key, val)
+    else
+      @store[key.hash % num_buckets].append(key, val)
+      @count += 1
+    end
   end
 
   def get(key)
+    @store[key.hash % num_buckets].get(key)
   end
 
   def delete(key)
+      if @store.include?(key)
+        @store[key.hash % num_buckets].remove(key)
+        @count -= 1
+      end  
   end
 
   def each
