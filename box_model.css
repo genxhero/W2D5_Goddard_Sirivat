@@ -1,0 +1,25 @@
+div {
+  height: 200px;
+  width: 200px;
+  padding: 50px;
+  border: 5px solid black;
+}
+
+#first-div {
+  background-color: #39cccc;
+}
+
+#second-div {
+  box-sizing: border-box;
+  background-color: #ff4136;
+}
+
+#third-div {
+  min-height: 10px;
+    background-color: #abc123;
+}
+
+  p {
+  box-sizing: inherit;
+  background-color: #7fdbff;
+}
