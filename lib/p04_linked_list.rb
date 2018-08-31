@@ -20,7 +20,7 @@ end
 
 class LinkedList
   include Enumerable
-  attr_accessor :list
+  attr_accessor :list, :head, :tail
   def initialize
     @head = Node.new
     @tail = Node.new
@@ -91,8 +91,4 @@ class LinkedList
     end
   end
 
-  # uncomment when you have `each` working and `Enumerable` included
-  # def to_s
-  #   inject([]) { |acc, link| acc << "[#{link.key}, #{link.val}]" }.join(", ")
-  # end
 end
